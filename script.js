@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const heroText = document.querySelector(".hero-content");
-  heroText.style.opacity = 0;
-  setTimeout(() => {
-    heroText.style.transition = "opacity 1.5s ease-in";
-    heroText.style.opacity = 1;
-  }, 300);
+// Smooth scroll for navigation links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
 });
